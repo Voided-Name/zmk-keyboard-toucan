@@ -17,6 +17,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Windows {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <1 38>;
+        };
+
+        Alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <27 28>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
