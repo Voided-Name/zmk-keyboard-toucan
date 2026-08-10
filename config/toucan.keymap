@@ -22,7 +22,7 @@
 
         Windows {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <1 38>;
+            key-positions = <38 2>;
         };
 
         Alt {
