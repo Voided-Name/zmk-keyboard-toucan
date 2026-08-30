@@ -24,11 +24,13 @@
         Windows {
             bindings = <&kp LEFT_GUI>;
             key-positions = <38 2>;
+            slow-release;
         };
 
         Alt {
             bindings = <&kp LEFT_ALT>;
             key-positions = <27 28>;
+            slow-release;
         };
     };
 
