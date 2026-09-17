@@ -75,17 +75,23 @@
             >;
         };
 
-        mslow {
+                mslow {
             display-name = "MSLOW";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_X(-5)  &trans  &trans  &msc MOVE_X(5)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_X(-200)  &mmv MOVE_Y(200)  &mmv MOVE_Y(-200)  &mmv MOVE_X(200)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_Y(-5)  &msc MOVE_Y(5)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_X(-5)  &trans  &trans  &msc MOVE_X(5)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_X(-200)  &mmv MOVE_Y(200)  &mmv MOVE_Y(-200)  &mmv MOVE_X(200)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_Y(-5)  &msc MOVE_Y(5)  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         mfast {
             display-name = "MFAST";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_X(-24)  &mmv MOVE_Y(-1500)  &msc MOVE_X(24)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_X(-200)  &mmv MOVE_X(-1500)  &mmv MOVE_Y(1500)  &mmv MOVE_X(1500)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_Y(-24)  &msc MOVE_Y(24)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_X(-24)  &trans  &trans  &msc MOVE_X(24)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_X(-1500)  &mmv MOVE_Y(1500)  &mmv MOVE_Y(-1500)  &mmv MOVE_X(1500)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &msc MOVE_Y(-24)  &msc MOVE_Y(24)  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
