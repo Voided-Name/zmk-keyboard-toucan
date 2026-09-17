@@ -7,7 +7,9 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
-#define PRECISION 4
+#define MOUSE 4
+#define MOUSE_SLOW 5
+#define MOUSE_FAST 6
 
 / {
     conditional_layers {
@@ -66,14 +68,36 @@
             >;
         };
 
-        precision {
-            display-name = "PRECISION";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
+
+        mouse {
+          display-name = "MOUSE";
+          bindings = <
+              &none           &none &none &none &none            &none    &none &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &to BASE  &none
+              &none           &none &none &none &none            &none    &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp LCLK &mkp RCLK
+              &mo MOUSE_SLOW  &none &none &none &mo MOUSE_FAST  &none    &none &msc SCRL_DOWN  &msc SCRL_UP   &none           &mkp MCLK &to BASE
+                                            &none &none &mkp LCLK    &mkp RCLK &none &none
+          >;
         };
 
-        extra_2 { status = "reserved"; };
+        mouse_slow {
+          display-name = "MOUSE SLOW";
+          bindings = <
+              &trans &trans &trans &trans &trans &trans    &trans &msc MOVE_X(-3) &mmv MOVE_Y(-200) &msc MOVE_X(3) &trans &trans
+              &trans &trans &trans &trans &trans &trans    &trans &mmv MOVE_X(-200) &mmv MOVE_Y(200) &mmv MOVE_X(200) &trans &trans
+              &trans &trans &trans &trans &trans &trans    &trans &msc MOVE_Y(-3) &msc MOVE_Y(3) &trans &trans &trans
+                                            &trans &trans &trans    &trans &trans &trans
+          >;
+        };
+
+        mouse_fast {
+          display-name = "MOUSE FAST";
+          bindings = <
+              &trans &trans &trans &trans &trans &trans    &trans &msc MOVE_X(-24) &mmv MOVE_Y(-1500) &msc MOVE_X(24) &trans &trans
+              &trans &trans &trans &trans &trans &trans    &trans &mmv MOVE_X(-1500) &mmv MOVE_Y(1500) &mmv MOVE_X(1500) &trans &trans
+              &trans &trans &trans &trans &trans &trans    &trans &msc MOVE_Y(-24) &msc MOVE_Y(24) &trans &trans &trans
+                                            &trans &trans &trans    &trans &trans &trans
+          >;
+        };
 
         extra_3 { status = "reserved"; };
     };
