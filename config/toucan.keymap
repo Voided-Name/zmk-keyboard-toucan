@@ -98,14 +98,5 @@
                                             &trans &trans &trans    &trans &trans &trans
           >;
         };
-
-        extra_3 { status = "reserved"; };
-    };
-};
-
-&glidepoint_listener {
-    precision_mode {
-        layers = <PRECISION>;
-        input-processors = <&zip_xy_scaler 1 1>;
     };
 };
