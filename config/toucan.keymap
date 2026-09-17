@@ -6,6 +6,7 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
+#define PRECISION 4
 
 / {
     conditional_layers {
@@ -62,10 +63,26 @@
             >;
         };
 
-        extra_1 { status = "reserved"; };
+        precision {
+            display-name = "PRECISION";
+            bindings = <
+                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
+                                            &trans &trans &trans   &trans &trans &trans
+            >;
+        };
 
         extra_2 { status = "reserved"; };
 
         extra_3 { status = "reserved"; };
     };
+
+};
+
+&glidepoint_listener {
+  precision_mode {
+    layers = <PRECISION>;
+    input-processors = <&zip_xy_scaler 1 1>;
+  };
 };
