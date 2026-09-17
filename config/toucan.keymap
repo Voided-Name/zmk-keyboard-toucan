@@ -7,7 +7,9 @@
 #define NAV  1
 #define SYM  2
 #define ADJ  3
-#define PRECISION 4
+#define MS 4
+#define MSLOW 5
+#define MFAST 6
 
 / {
     conditional_layers {
@@ -66,22 +68,26 @@
             >;
         };
 
-        precision {
-            display-name = "PRECISION";
+        ms {
+            display-name = "MS";
             bindings = <
-&trans  &kp E  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
-        extra_2 { status = "reserved"; };
+        mslow {
+            display-name = "MSLOW";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
 
-        extra_3 { status = "reserved"; };
+        mfast {
+            display-name = "MFAST";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
     };
 };
 
-&glidepoint_listener {
-    precision_mode {
-        layers = <PRECISION>;
-        input-processors = <&zip_xy_scaler 1 1>;
-    };
-};
