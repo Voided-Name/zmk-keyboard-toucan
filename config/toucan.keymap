@@ -96,3 +96,23 @@
         };
     };
 };
+
+&glidepoint_listener {
+    /*
+     * FAST MUST COME FIRST.
+     *
+     * When MFAST is momentarily held from MS, both layers 4 and 5
+     * are active. ZMK uses the first matching input-processor
+     * override, not the highest active layer.
+     */
+
+    fast_trackpad {
+        layers = <MFAST>;
+        input-processors = <&zip_xy_scaler 5 1>;
+    };
+
+    precise_trackpad {
+        layers = <MS>;
+        input-processors = <&zip_xy_scaler 1 8>;
+    };
+};
